@@ -64,13 +64,13 @@ export default function App() {
     // console.log("custom console", process.env.AAD_APP_TENANT_ID);
     // console.log(teamsUserCredential);
 
-    // useEffect(() => {
-    //   loading &&
-    //     app.initialize().then(() => {
-    //       // Hide the loading indicator.
-    //       app.notifySuccess();
-    //     });
-    // }, [loading]);
+    useEffect(() => {
+      loading &&
+        app.initialize().then(() => {
+          // Hide the loading indicator.
+          app.notifySuccess();
+        });
+    }, [loading]);
     return (
         <TeamsFxContext.Provider
             value={{ theme, themeString, teamsUserCredential }}
@@ -83,7 +83,7 @@ export default function App() {
                         ? teamsHighContrastTheme
                         : {
                               ...teamsLightTheme,
-                              colorNeutralBackground3: "#eeeee",
+                              colorNeutralBackground3: "#eeeeee",
                           }
                 }
                 style={{ background: tokens.colorNeutralBackground3 }}
