@@ -431,36 +431,40 @@ export default function Tab({ token }) {
                         </div>
                         <div className={styles.footer}>
                             <div>
-                                {currentPage > 1 && (
-                                    <Button
-                                        icon={<ArrowLeft32Filled />}
-                                        appearance="transparent"
-                                        onClick={() => {
-                                            // let pageNum = currentPage;
-                                            setCurrentPage(currentPage - 1);
-                                            // Pagination(false, true);
-                                        }}
-                                    >
-                                        Prev..
-                                    </Button>
-                                )}
+                                <Button
+                                    icon={<ArrowLeft32Filled />}
+                                    appearance="transparent"
+                                    onClick={() => {
+                                        // let pageNum = currentPage;
+                                        setCurrentPage(currentPage - 1);
+                                        // Pagination(false, true);
+                                    }}
+                                    style={{
+                                        visibility: currentPage < 2 && "hidden",
+                                    }}
+                                >
+                                    Prev..
+                                </Button>
                                 &nbsp;
                                 <Text size={600}>{currentPage}</Text>
                                 &nbsp;
-                                {currentPage < totalNumOfPages && (
-                                    <Button
-                                        icon={<ArrowRight32Filled />}
-                                        appearance="transparent"
-                                        iconPosition="after"
-                                        onClick={() => {
-                                            // let pageNum = currentPage;
-                                            setCurrentPage(currentPage + 1);
-                                            // Pagination(true, false);
-                                        }}
-                                    >
-                                        Next..
-                                    </Button>
-                                )}
+                                <Button
+                                    icon={<ArrowRight32Filled />}
+                                    appearance="transparent"
+                                    iconPosition="after"
+                                    onClick={() => {
+                                        // let pageNum = currentPage;
+                                        setCurrentPage(currentPage + 1);
+                                        // Pagination(true, false);
+                                    }}
+                                    style={{
+                                        visibility:
+                                            currentPage > totalNumOfPages &&
+                                            "hidden",
+                                    }}
+                                >
+                                    Next..
+                                </Button>
                                 {/* <Pages /> */}
                             </div>
                             <div className={styles.button}>
