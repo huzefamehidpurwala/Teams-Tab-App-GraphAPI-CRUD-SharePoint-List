@@ -83,7 +83,7 @@ export default function App() {
                         ? teamsHighContrastTheme
                         : {
                               ...teamsLightTheme,
-                              colorNeutralBackground3: "#eeeeee",
+                              colorNeutralBackground3: "#eeeee",
                           }
                 }
                 style={{ background: tokens.colorNeutralBackground3 }}
